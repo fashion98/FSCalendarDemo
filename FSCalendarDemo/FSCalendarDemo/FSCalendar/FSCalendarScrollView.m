@@ -309,6 +309,14 @@ static NSString *const cellIdOfFSCalendarCell = @"FSCalendarCell";
 
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (scrollView.contentOffset.x == kScreenWidth && scrollView.contentOffset.y == 0.00f && self.isShowSingle) {
+        
+        [self setScrollViewContentOffset];
+    }
+}
+
 #pragma mark ---- 设置scrollView的偏移量 ----
 - (void)setScrollViewContentOffset {
     
